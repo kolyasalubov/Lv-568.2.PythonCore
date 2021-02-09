@@ -1,3 +1,5 @@
+# task 1
+
 py_philosophy = """Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
@@ -18,4 +20,10 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!"""
 
-print(py_philosophy)
+print("There is", py_philosophy.count("better"), 'words "better"')
+print("There is", py_philosophy.count("never"), 'words "never"')
+print("There is", py_philosophy.count("is"), 'words "is"')
+
+print(py_philosophy.upper())
+
+print(py_philosophy.replace("i","&"))

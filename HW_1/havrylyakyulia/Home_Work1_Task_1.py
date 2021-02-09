@@ -10,11 +10,3 @@ print("Where do you live? ")
 user_city = input("You live in ")
 print(user_city, type(user_city))
 
-a = 2
-b = 2
-print("a + b : ", a + b)
-print("a - b : ", a - b)
-print("a * b : ", a * b)
-print("a / b : ", a / b)
-print("a ** b : ", a ** b)
-

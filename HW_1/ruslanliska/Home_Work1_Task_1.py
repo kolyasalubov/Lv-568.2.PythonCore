@@ -1,7 +1,7 @@
 """This is defining variables and outputting results."""
 
-a = 393
-b = 19
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 print('a =', a)
 print('b =', b)
 print('Result (a+b):', a + b)

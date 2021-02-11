@@ -18,7 +18,7 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!"""
 print("Кількість слова 'better' в Python Zen =", zen.count("better"))
-print("Кількість слова 'never' в Python Zen=", zen.count("never"))
+print("Кількість слова 'never' в Python Zen =", zen.count("never"))
 print("Кількість слова 'is' в Python Zen =", zen.count("is"))
 print()
 print( zen.upper())

@@ -1,6 +1,5 @@
 username = input("Enter your login:")
-user1 = "First"
-if username == user1:
-    print ("Welcome to the system")
+while not username == "First" :
+    username = input("Try again, please")
 else:
-    print ("Access denied")
+    print ("Welcome to the system")

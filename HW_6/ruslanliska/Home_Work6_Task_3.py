@@ -1,4 +1,6 @@
 def count_symbols (word):
+  """This function calculates all symbols in string"""
+  
   letter_dict = {}
   for letter in word:
     if letter not in letter_dict:

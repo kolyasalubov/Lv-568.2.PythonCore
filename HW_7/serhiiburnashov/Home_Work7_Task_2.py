@@ -23,7 +23,7 @@ def compare(entered_number, rn=random_number):
         return True
     elif number > rn:
         message(f"{number} > ?")
-    elif entered_number < rn:
+    elif number < rn:
         message(f"{number} < ?")
     else:
         message(f"You won, this is the number: {number}")

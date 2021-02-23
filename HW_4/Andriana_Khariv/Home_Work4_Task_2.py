@@ -3,3 +3,4 @@ for num in list_number:
     num = float(num)
     print(num)
     print(type(num))
+

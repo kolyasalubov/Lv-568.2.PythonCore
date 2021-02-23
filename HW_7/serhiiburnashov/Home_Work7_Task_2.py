@@ -1,38 +1,20 @@
-from random import randint
-
-random_number = randint(1, 100)
+import re
 
 
-def message(text):
+def validation(password):
     """
-    Print message.
+    Password check.
     """
 
-    print(text)
+    password_check = re.fullmatch(r'^.*(?=.*[a-z])(?=.*?[A-Z])(?=.*\d)(?=.*?[@$#])'
+                                  r'[a-zA-Z0-9@$#]{6,16}$', password)
+    return password_check
 
 
-def compare(entered_number, rn=random_number):
-    """
-    The function compares the entered number with a random number
-    and returns one of the values.
-    """
+entered_password = input("Enter password to test: ")
 
-    number = int(entered_number)
-    if number == 0:
-        message("You are out of the game")
-        return True
-    elif number > rn:
-        message(f"{number} > ?")
-    elif number < rn:
-        message(f"{number} < ?")
-    else:
-        message(f"You won, this is the number: {number}")
-        return True
-
-
-while True:
-    message("To exit the game, press: 0")
-    enter_number = input("Enter number 1-100: ")
-    returned_value = compare(enter_number)
-    if returned_value:
-        break
+check = validation(entered_password)
+if check:
+    print(f"Valid password, len password: {len(entered_password)}")
+else:
+    print(f"Password not valid, len password: {len(entered_password)}")

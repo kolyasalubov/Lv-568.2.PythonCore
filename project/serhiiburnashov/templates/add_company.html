@@ -5,11 +5,14 @@
 {% endblock %}
 
 <div class="container mt-5">
-{% block maintext %}
-Додати компанію
-{% endblock %}
+    {% block maintext %}
+    Додати компанію
+    <p>
+        <a href="/" class="btn btn-outline-warning">На головну сторінку</a>
+    </p>
+    {% endblock %}
 
-{% block body %}
+    {% block body %}
     <form method="post">
         <input type="text" name="name_of_the_company" id="name_of_the_company" class="form-control{{edit_style}}"
                placeholder="Введіть назву компанії"><br>

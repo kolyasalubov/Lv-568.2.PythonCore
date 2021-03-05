@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import re
 from flask import request
 from flask import redirect
 from flask import Blueprint
@@ -25,7 +26,9 @@ def edit_member(item):
         if request.form["surname"]:
             member_data["surname"] = request.form["surname"]
         if request.form["phone_number"]:
-            member_data["phone_number"] = request.form["phone_number"]
+            edit_phone_number = request.form["phone_number"]
+            edit_phone_number = re.sub(r'(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})', r'+\1(\2)\3-\4-\5', edit_phone_number)
+            member_data["phone_number"] = edit_phone_number
 
         if member_data != {}:
             for i in member_data:

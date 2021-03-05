@@ -8,15 +8,17 @@
 {% if main_text: %}
 {{main_text}}
 <div class="btn-group mb-3">
-    <a href="/edit/company" class="btn btn-outline-warning">
-        Редагувати назву
-    </a>
-    <a href="/delete/company" class="btn btn-outline-danger">
-        Видалити компанію
-    </a><span></span>
-    <a href="/add/member" class="btn btn-outline-success">
-        Додати співробітника
-    </a>
+    <p>
+        <a href="/edit/company" class="btn btn-outline-warning">
+            Редагувати назву
+        </a>
+        <a href="/delete/company" class="btn btn-outline-danger">
+            Видалити компанію
+        </a><span></span>
+        <a href="/add/member" class="btn btn-outline-success">
+            Додати співробітника
+        </a>
+    </p>
 </div>
 {% else %}
 <a href="/add/company" class="btn btn-outline-danger">Додати компанію</a>

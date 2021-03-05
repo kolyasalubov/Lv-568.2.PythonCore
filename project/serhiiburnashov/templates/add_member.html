@@ -7,6 +7,9 @@
 <div class="container mt-5">
     {% block maintext %}
     Додати співробітника
+    <p>
+        <a href="/" class="btn btn-outline-warning">На головну сторінку</a>
+    </p>
     {% endblock %}
 
     {% block body %}
@@ -14,7 +17,8 @@
         <input type="text" name="position" id="position" class="form-control{{edit_style}}" placeholder="Посада"><br>
         <input type="text" name="name" id="name" class="form-control{{edit_style}}" placeholder="Ім'я"><br>
         <input type="text" name="surname" id="surname" class="form-control" placeholder="Прізвище"><br>
-        <input type="text" name="phone_number" id="phone_number" class="form-control{{edit_style}}" placeholder="Номер телефону"><br>
+        <input type="text" name="phone_number" id="phone_number" class="form-control{{edit_style}}"
+               placeholder="Номер телефону тільки 12 цифр"><br>
         <input type="submit" class="btn btn-success" value="Додати">
     </form>
 </div>

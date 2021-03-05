@@ -8,8 +8,8 @@ from flask import render_template
 from db_driver.read_db import read_db
 from db_driver.write_db import write_db
 
-
 add_company_route = Blueprint('add_company_route', __name__)
+
 
 @add_company_route.route("/add/company", methods=["POST", "GET"])
 def add_company():
@@ -28,3 +28,5 @@ def add_company():
             else:
                 edit_style = "-error"
                 return render_template("add_company.html", edit_style=edit_style)
+    else:
+        return redirect("/")

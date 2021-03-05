@@ -32,9 +32,7 @@ def add_member():
             id = ''.join(str(time()).split("."))
             db_data["company"][f"company_member_{str(id)}"] = member_data
         else:
-            print("test")
             edit_style = "-error"
-            print(edit_style)
             return render_template("add_member.html", edit_style=edit_style)
         write_db(db_data)
     return redirect("/")

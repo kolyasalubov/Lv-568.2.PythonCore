@@ -27,9 +27,14 @@ def edit_member(item):
             member_data["surname"] = request.form["surname"]
         if request.form["phone_number"]:
             edit_phone_number = request.form["phone_number"]
-            edit_phone_number = re.sub(r'(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})', r'+\1(\2)\3-\4-\5', edit_phone_number)
-            member_data["phone_number"] = edit_phone_number
-
+            edit_phone_number.isdigit()
+            if edit_phone_number.isdigit() and len(edit_phone_number) == 12:
+                edit_phone_number = re.sub(r'(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})',
+                                           r'+\1(\2)\3-\4-\5', edit_phone_number)
+                member_data["phone_number"] = edit_phone_number
+            else:
+                error_phone = "border: 1px solid #ff0000"
+                return render_template("edit_member.html", error_phone=error_phone)
         if member_data != {}:
             for i in member_data:
                 db_data["company"][item][i] = member_data[i]

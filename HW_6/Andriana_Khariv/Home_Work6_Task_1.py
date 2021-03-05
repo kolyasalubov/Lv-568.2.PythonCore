@@ -1,2 +1,9 @@
-#Write a function that returns the largest number of two numbers
-#(use DocStrings documentation strings in the function).
+num_one, num_two = int(input()), int(input())
+
+
+def largest_number():
+    max_num = max(num_one, num_two)
+    print(max_num)
+
+
+largest_number()

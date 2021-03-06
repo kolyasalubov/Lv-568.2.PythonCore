@@ -13,3 +13,9 @@ authbind --deep python3 main.py
 
 ![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/1.JPG)
 ![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/2.JPG)
+![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/3.JPG)
+![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/4.JPG)
+![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/5.JPG)
+![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/6.JPG)
+![Image alt](https://github.com/kolyasalubov/Lv-568.2.PythonCore/raw/serhiiburnashov/project/serhiiburnashov/consol_img/7.JPG)
+

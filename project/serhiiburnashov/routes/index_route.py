@@ -4,7 +4,6 @@ from flask import Blueprint
 from flask import render_template
 
 from db_driver.read_db import read_db
-from db_driver.write_db import write_db
 
 index_route = Blueprint('index_route', __name__)
 

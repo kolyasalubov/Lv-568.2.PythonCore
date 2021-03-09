@@ -1,12 +1,15 @@
-#Напишіть скрипт, який обчислює площу прямокутника a*b, площу трикутника
-# 0.5*h*a, площу кола pi*r**2 і цей скрипт використати в іншому модулі,
-# в якому ми запитуємо користувача площу якої фігури він хоче обчислити.
-
-#(для виконання завдання необхідно імпортувати
-# модуль math, а з нього функцію pow() та значення змінної пі,
-# модуль1, який містить три функції для знаходження площ, модуль2,
-# в якому імпортований модуль1 і виконується основна логіка програми).
+from task7_1 import *
 
 
-import math
+i = int(input('Area of wich figure do you want to calculate? (Rectangle = 1, Triangle = 2 or Circle = 3) '))
+if i == 1:
+    square_rectangle(int(input('side of the rectangle a ')), int(input('side of the rectangle b ')))
+
+elif i == 2:
+    square_triangle(int(input('side of triangle h ')), int(input('side of triangle a ')))
+
+elif i == 3:
+    square_circle(int(input('radius of the circle ')))
+else:
+    print('the entered index is incorrect')
 

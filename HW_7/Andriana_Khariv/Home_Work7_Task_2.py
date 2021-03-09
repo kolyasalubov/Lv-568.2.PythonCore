@@ -1,5 +1,3 @@
-#Напишіть програму Python для перевірки дійсності пароля (введення від користувачів).
-
 #Перевірка:
 #Принаймні 1 буква між [a-z] та 1 буква між [A-Z].
 #Принаймні 1 число між [0-9].
@@ -7,27 +5,33 @@
 #Мінімальна довжина 6 символів.
 #Максимальна довжина 16 символів.
 
+#не робоча програма
+
 
 def getPassword():
    return input("Enter password: ")
 
-def CountDigitsFor(password):
-   return sum(character.isdigit() for character in password)
-
 def validPassword(password):
     if len(password) >= 16:
         print('Пароль задовгий')
-    elif password.isalnum():
-        print('пароль містить цифри')
+    elif password.isdigit():
+        print('пароль не містить цифри')
+    elif password.islower() == 0:
+        print("неба букви нижнього регістру")
+    elif password.isupper() == 0:
+        print("нема букви верхнього регістру")
+    elif len(password) == "@":
+        print("незнаю ще")
+    elif len(password) <= 6:
+        print("Пароль закороткий")
     else:
-        print('фіг зна що')
-
+        print('супер')
 
 def main():
    password = getPassword()
    if validPassword(password):
-      print(password + " is valid")
+      print(password + " валідний")
    else:
-      print(password + " is invalid")
+      print(password + " не валідний")
 
 main()

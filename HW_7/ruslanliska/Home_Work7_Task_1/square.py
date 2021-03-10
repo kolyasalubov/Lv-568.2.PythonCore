@@ -1,3 +1,6 @@
+import math
+from math import pi
+from math import pow
 def rectangle_square():
     """This function calculates the square of rectangle
     Input parameters: wight and height
@@ -17,8 +20,8 @@ def circle_square():
     Output return square of circle
     """
     r = float(input("Please enter the radius of your circle: "))
-    Pi = 3.14
-    square = (Pi * (r**2))
+    # Pi = 3.14
+    square = (pi * pow(r, 2))
     return ("Here is square of your circle: {}".format(round(square)))
 
 def triangle_square():
@@ -30,7 +33,7 @@ def triangle_square():
     b = float(input("Please, enter lenght of the second side: "))
     c = float(input("Please, enter lenght of the third side: "))
     p = (a + b + c)/2
-    square = ((p*(p-a)*(p-b)*(p-c))**0.5)
+    square = (pow(p*(p-a)*(p-b)*(p-c)), 0.5)
     return ("Square of your triangle is: {}".format(round(square, 2)))
 
 # triangle_square()

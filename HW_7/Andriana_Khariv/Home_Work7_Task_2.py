@@ -7,31 +7,23 @@
 
 #не робоча програма
 
+import re
 
-def getPassword():
-   return input("Enter password: ")
+password = input("Enter password: ")
 
-def validPassword(password):
-    if len(password) >= 16:
-        print('Пароль задовгий')
-    elif password.isdigit():
-        print('пароль не містить цифри')
-    elif password.islower() == 0:
-        print("неба букви нижнього регістру")
-    elif password.isupper() == 0:
-        print("нема букви верхнього регістру")
-    elif len(password) == "@":
-        print("незнаю ще")
-    elif len(password) <= 6:
-        print("Пароль закороткий")
-    else:
-        print('супер')
+if len(password) >= 16:
+    print('Пароль задовгий')
+elif re.findall("[0-9]", password) == []:
+    print('Пароль повинен містити цифри')
+elif re.findall("[a-z]", password) == []:
+    print("Пароль не містить букви нижнього регістру")
+elif re.findall("[A-Z]", password) == []:
+    print("Пароль не містить букви верхнього регістру")
+elif re.findall("[#@$]", password) == []:
+    print("Пароль не містить символів #, @ або $")
+elif len(password) <= 6:
+    print("Пароль закороткий")
+else:
+    print(password + ' супер пароль')
 
-def main():
-   password = getPassword()
-   if validPassword(password):
-      print(password + " валідний")
-   else:
-      print(password + " не валідний")
 
-main()

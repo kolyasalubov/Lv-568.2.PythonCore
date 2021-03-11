@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Додати співробітника
+{% endblock %}
+
+<div class="container mt-5">
+    {% block maintext %}
+    Додати співробітника
+    <p>
+        <a href="/" class="btn btn-outline-warning">На головну сторінку</a>
+    </p>
+    {% endblock %}
+
+    {% block body %}
+    <form method="post">
+        * Обов`язкове поле:
+        <input type="text" name="position" id="position" class="form-control{{edit_style}}" placeholder="Посада"><br>
+        * Обов`язкове поле:
+        <input type="text" name="name" id="name" class="form-control{{edit_style}}" placeholder="Ім'я"><br>
+        Не обов`язкове поле:
+        <input type="text" name="surname" id="surname" class="form-control" placeholder="Прізвище"><br>
+        * Обов`язкове поле:
+        <input type="text" name="phone_number" id="phone_number" class="form-control{{edit_style}}" style="{{error_phone}}"
+               placeholder="Номер телефону тільки 12 цифр"><br>
+        <input type="submit" class="btn btn-success" value="Додати">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редагувати назву компанії
+{% endblock %}
+
+<div class="container mt-5">
+    {% block maintext %}
+    Редагувати назву компанії
+    <p>
+        <a href="/" class="btn btn-outline-warning">На головну сторінку</a>
+    </p>
+    {% endblock %}
+
+    {% block body %}
+    <form method="post">
+        <input type="text" name="name_of_the_company" id="name_of_the_company" class="form-control"
+               placeholder="Введіть нову назву компанії"><br>
+        <input type="submit" class="btn btn-success" value="Змінити">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Головна
+{% endblock %}
+
+{% block maintext %}
+{% if main_text: %}
+{{main_text}}
+<div class="btn-group mb-3">
+    <p>
+        <a href="/edit/company" class="btn btn-outline-warning">
+            Редагувати назву
+        </a>
+        <a href="/delete/company" class="btn btn-outline-danger">
+            Видалити компанію
+        </a><span></span>
+        <a href="/add/member" class="btn btn-outline-success">
+            Додати співробітника
+        </a>
+    </p>
+</div>
+{% else %}
+<a href="/add/company" class="btn btn-outline-danger">Додати компанію</a>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+{% for item in arr %}
+{% if item != "name_of_the_company" %}
+<div class="card widget-flat">
+    <div class="card-body">
+        <div class="float-right">
+            <a href="/edit/{{ item }}">Редагувати</a>&emsp;<a href="/delete/{{ item }}">Видалити</a>
+        </div>
+        <h5 class="text-muted font-weight-normal mt-0 text-uppercase">{{ arr[item]["position"] }}</h5>
+        <p class="mb-0 text-muted font-weight-normal">
+            <span class="text-nowrap">{{ arr[item]["name"] }}</span>
+            <span class="text-nowrap">{{ arr[item]["surname"] }}</span>
+        </p>
+        <p class="mb-0 text-muted font-weight-light"><span class="text-nowrap">{{ arr[item]["phone_number"] }}</span>
+        </p>
+    </div>
+</div><br>
+{% endif%}
+{% endfor %}
+{% endblock %}

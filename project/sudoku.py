@@ -10,7 +10,7 @@ BLACK = (0, 0, 0)
 
 screen = pygame.display.set_mode((500, 550))
 
-pygame.display.set_caption("Судоку")
+pygame.display.set_caption("Sudoku")
 
 x = 0
 y = 0
@@ -28,14 +28,15 @@ grid =[
         [1, 2, 0, 0, 0, 7, 4, 0, 0],
         [0, 4, 9, 2, 0, 6, 0, 0, 7]
     ]
+font1 = pygame.font.SysFont(None, 40)
 
-font1 = pygame.font.SysFont("comicsans", 40)
-font2 = pygame.font.SysFont("comicsans", 20)
+
 def get_cord(pos):
     global x
     x = pos[0]//dif
     global y
     y = pos[1]//dif
+
 
 def draw_box():
     for i in range(2):
@@ -53,33 +54,36 @@ def draw():
                 text1 = font1.render(str(grid[i][j]), 1, GREEN)
                 screen.blit(text1, (i * dif + 15, j * dif + 15))
     for i in range(10):
-        if i % 3 == 0 :
+        if i % 3 == 0:
             thick = 10
         else:
             thick = 1
         pygame.draw.line(screen, GREEN, (0, i * dif), (500, i * dif), thick)
         pygame.draw.line(screen, GREEN, (i * dif, 0), (i * dif, 500), thick)
 
+
 def draw_val(num):
     text1 = font1.render(str(num), 1, GREEN)
     screen.blit(text1, (x * dif + 15, y * dif + 15))
 
+
 def raise_error():
-    text2 = font1.render("Wrong !!! Not a valid Key", 1, BLACK)
+    text2 = font1.render("Not a valid Key", 1, BLACK)
     screen.blit(text2, (20, 520))
     pygame.display.update()
 
+
 def valid(m, i, j, val):
     for it in range(9):
-        if m[i][it]== val:
+        if m[i][it] == val:
             return False
-        if m[it][j]== val:
+        if m[it][j] == val:
             return False
     it = i//3
     jt = j//3
     for i in range(it * 3, it * 3 + 3):
-        for j in range (jt * 3, jt * 3 + 3):
-            if m[i][j]== val:
+        for j in range(jt * 3, jt * 3 + 3):
+            if m[i][j] == val:
                 return False
     return True
 
@@ -90,8 +94,6 @@ rs = 0
 error = 0
 
 while run:
-
-
     screen.fill(LEMON_CREAM)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -102,16 +104,16 @@ while run:
             get_cord(pos)
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                x-= 1
+                x -= 1
                 flag1 = 1
             if event.key == pygame.K_RIGHT:
-                x+= 1
+                x += 1
                 flag1 = 1
             if event.key == pygame.K_UP:
-                y-= 1
+                y -= 1
                 flag1 = 1
             if event.key == pygame.K_DOWN:
-                y+= 1
+                y += 1
                 flag1 = 1
             if event.key == pygame.K_1:
                 val = 1
@@ -132,7 +134,7 @@ while run:
             if event.key == pygame.K_9:
                 val = 9
 
-            if event.key == pygame.K_d:
+            if event.key == pygame.K_r:
                 rs = 0
                 error = 0
                 grid =[
@@ -150,10 +152,10 @@ while run:
         draw_val(val)
 
         if valid(grid, int(x), int(y), val):
-            grid[int(x)][int(y)]= val
+            grid[int(x)][int(y)] = val
             flag1 = 0
         else:
-            grid[int(x)][int(y)]= 0
+            grid[int(x)][int(y)] = 0
             raise_error()
         val = 0
 

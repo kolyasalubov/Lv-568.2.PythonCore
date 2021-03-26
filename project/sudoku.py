@@ -18,17 +18,17 @@ dif = 500 / 9
 val = 0
 
 grid =[
-        [7, 8, 0, 4, 0, 0, 1, 2, 0],
-        [6, 0, 0, 0, 7, 5, 0, 0, 9],
-        [0, 0, 0, 6, 0, 1, 0, 7, 8],
-        [0, 0, 7, 0, 4, 0, 2, 6, 0],
-        [0, 0, 1, 0, 5, 0, 9, 3, 0],
-        [9, 0, 4, 0, 6, 0, 0, 0, 5],
-        [0, 7, 0, 3, 0, 0, 0, 1, 2],
-        [1, 2, 0, 0, 0, 7, 4, 0, 0],
-        [0, 4, 9, 2, 0, 6, 0, 0, 7]
+        [0, 0, 5, 0, 3, 0, 9, 2, 0],
+        [2, 0, 0, 6, 0, 0, 5, 0, 4],
+        [0, 0, 9, 0, 0, 1, 0, 0, 0],
+        [0, 9, 0, 0, 0, 6, 0, 8, 3],
+        [7, 0, 0, 0, 0, 0, 0, 0, 5],
+        [0, 0, 0, 5, 0, 0, 6, 0, 2],
+        [0, 4, 0, 0, 0, 9, 1, 0, 0],
+        [0, 0, 0, 0, 4, 0, 0, 7, 0],
+        [0, 0, 0, 0, 0, 7, 0, 0, 0]
     ]
-font1 = pygame.font.SysFont(None, 40)
+text = pygame.font.SysFont(None, 40)
 
 
 def get_cord(pos):
@@ -51,8 +51,8 @@ def draw():
 
                 pygame.draw.rect(screen, AQUAMARINE, (i * dif, j * dif, dif + 1, dif + 1))
 
-                text1 = font1.render(str(grid[i][j]), 1, GREEN)
-                screen.blit(text1, (i * dif + 15, j * dif + 15))
+                text_num = text.render(str(grid[i][j]), True, GREEN)
+                screen.blit(text_num, (i * dif + 15, j * dif + 15))
     for i in range(10):
         if i % 3 == 0:
             thick = 10
@@ -63,14 +63,14 @@ def draw():
 
 
 def draw_val(num):
-    text1 = font1.render(str(num), 1, GREEN)
-    screen.blit(text1, (x * dif + 15, y * dif + 15))
+    text_num = text.render(str(num), True, GREEN)
+    screen.blit(text_num, (x * dif + 15, y * dif + 15))
 
 
 def raise_error():
-    text2 = font1.render("Not a valid Key", 1, BLACK)
-    screen.blit(text2, (20, 520))
-    pygame.display.update()
+    text_error = text.render("Not a valid number", True, BLACK)
+    screen.blit(text_error, (20, 520))
+
 
 
 def valid(m, i, j, val):
@@ -138,15 +138,15 @@ while run:
                 rs = 0
                 error = 0
                 grid =[
-                    [7, 8, 0, 4, 0, 0, 1, 2, 0],
-                    [6, 0, 0, 0, 7, 5, 0, 0, 9],
-                    [0, 0, 0, 6, 0, 1, 0, 7, 8],
-                    [0, 0, 7, 0, 4, 0, 2, 6, 0],
-                    [0, 0, 1, 0, 5, 0, 9, 3, 0],
-                    [9, 0, 4, 0, 6, 0, 0, 0, 5],
-                    [0, 7, 0, 3, 0, 0, 0, 1, 2],
-                    [1, 2, 0, 0, 0, 7, 4, 0, 0],
-                    [0, 4, 9, 2, 0, 6, 0, 0, 7]
+                    [0, 0, 5, 0, 3, 0, 9, 2, 0],
+                    [2, 0, 0, 6, 0, 0, 5, 0, 4],
+                    [0, 0, 9, 0, 0, 1, 0, 0, 0],
+                    [0, 9, 0, 0, 0, 6, 0, 8, 3],
+                    [7, 0, 0, 0, 0, 0, 0, 0, 5],
+                    [0, 0, 0, 5, 0, 0, 6, 0, 2],
+                    [0, 4, 0, 0, 0, 9, 1, 0, 0],
+                    [0, 0, 0, 0, 4, 0, 0, 7, 0],
+                    [0, 0, 0, 0, 0, 7, 0, 0, 0]
                 ]
     if val != 0:
         draw_val(val)
